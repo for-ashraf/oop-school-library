@@ -17,6 +17,7 @@ class Person
   end
 
   private
+  
   def is_of_age
     age >= 18
   end
