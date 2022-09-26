@@ -44,5 +44,3 @@ class Person
     end
 
 end
-person1 = Person.new(18, "My Name", true) 
-p person1.can_use_services
