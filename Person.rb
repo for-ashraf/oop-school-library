@@ -1,3 +1,4 @@
+# created a base Class Person
 class Person
   def initialize(age, name = 'Unknown', parent_permission: true)
     @name = name
@@ -17,7 +18,7 @@ class Person
   end
 
   private
-  
+
   def is_of_age
     age >= 18
   end
