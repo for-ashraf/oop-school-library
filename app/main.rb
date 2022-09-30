@@ -79,7 +79,7 @@ class State
     list_people(indexed: true)
     person = gets.chomp
 
-    print 'Date(yyyy/mm/dd)::'
+    print 'Date:'
     date = gets.chomp
     Rental.new(date, @books[book.to_i], @people[person.to_i])
 
@@ -111,10 +111,8 @@ class State
     case choice
     when 'List all books'
       list_books
-      main_menu
     when 'List all people'
       list_people
-      main_menu
     when 'Create a person'
       create_person
       main_menu
@@ -122,7 +120,7 @@ class State
       create_book
       main_menu
     when 'Create a rental'
-      create_rental
+      puts create_rental
       main_menu
     when 'List all rentals for a person id'
       rental_list
