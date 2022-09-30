@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../classes/student'
 require_relative '../classes/teacher'
 require_relative '../classes/book'
@@ -108,7 +106,6 @@ class State
     person_choice == '1' ? create_student : create_teacher
   end
 
-  # Method to handle user choice
   def handle_choice(choice)
     case choice
     when 'List all books'
