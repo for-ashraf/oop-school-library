@@ -107,7 +107,7 @@ class State
   end
 
   # Method to handle user choice
-  def hnd_choice(choice)
+  def hn_choice(choice)
     case choice
     when 'List all books'
       list_books
@@ -138,7 +138,7 @@ class State
     choices.each { |key, value| puts "#{key}:#{value}" }
     print 'Please enter a number:'
     choice = gets.chomp
-    hnd_choice(choices[choice.to_i])
+    hn_choice(choices[choice.to_i])
     puts choices[choice.to_i]
   end
 
