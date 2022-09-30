@@ -57,7 +57,6 @@ class State
       print "#{index}) " if indexed
       print "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age:#{person.age}\n"
     end
-    main_menu
   end
 
   def list_books(indexed: false)
@@ -65,7 +64,6 @@ class State
       print "#{index}) " if indexed
       print "Title: #{book.title}, Author: #{book.author}\n"
     end
-    main_menu
   end
 
   def create_rental
@@ -81,7 +79,7 @@ class State
     list_people(indexed: true)
     person = gets.chomp
 
-    print 'Date:'
+    print 'Date(yyyy/mm/dd)::'
     date = gets.chomp
     Rental.new(date, @books[book.to_i], @people[person.to_i])
 
@@ -113,8 +111,10 @@ class State
     case choice
     when 'List all books'
       list_books
+      main_menu
     when 'List all people'
       list_people
+      main_menu
     when 'Create a person'
       create_person
       main_menu
@@ -122,7 +122,7 @@ class State
       create_book
       main_menu
     when 'Create a rental'
-      puts create_rental
+      create_rental
       main_menu
     when 'List all rentals for a person id'
       rental_list
