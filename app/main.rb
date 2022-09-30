@@ -79,7 +79,7 @@ class State
     list_people(indexed: true)
     person = gets.chomp
 
-    print 'Date:'
+    print 'Date(yyyy/mm/dd)::'
     date = gets.chomp
     Rental.new(date, @books[book.to_i], @people[person.to_i])
 
@@ -106,14 +106,14 @@ class State
     person_choice == '1' ? create_student : create_teacher
   end
 
-  # Method to handle user choice
-  def handle_choice(choice)
+  def handle_choice(choice)  # rubocop:disable Metrics/MethodLength
     case choice
     when 'List all books'
       list_books
       main_menu
     when 'List all people'
       list_people
+      main_menu
     when 'Create a person'
       create_person
       main_menu
