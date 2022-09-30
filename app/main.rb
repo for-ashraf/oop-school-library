@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../classes/student'
 require_relative '../classes/teacher'
 require_relative '../classes/book'
