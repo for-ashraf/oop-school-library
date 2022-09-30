@@ -106,7 +106,7 @@ class State
     person_choice == '1' ? create_student : create_teacher
   end
 
-  def handle_choice(choice)  # rubocop:disable Metrics/MethodLength
+  def handle_choice(choice) # rubocop:disable Metrics/MethodLength
     case choice
     when 'List all books'
       list_books
