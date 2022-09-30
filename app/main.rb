@@ -111,6 +111,7 @@ class State
     case choice
     when 'List all books'
       list_books
+      main_menu
     when 'List all people'
       list_people
     when 'Create a person'
