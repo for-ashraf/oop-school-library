@@ -57,6 +57,7 @@ class State
       print "#{index}) " if indexed
       print "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age:#{person.age}\n"
     end
+    main_menu
   end
 
   def list_books(indexed: false)
@@ -64,6 +65,7 @@ class State
       print "#{index}) " if indexed
       print "Title: #{book.title}, Author: #{book.author}\n"
     end
+    main_menu
   end
 
   def create_rental
@@ -71,7 +73,7 @@ class State
       return 'You didn\'t have any person and/or book added yet; rental cant be created!'
     end
 
-    puts 'Select a book from the following list by numbers'
+    puts 'Select a book from the following list by number'
     list_books(indexed: true)
     book = gets.chomp
 
@@ -79,7 +81,7 @@ class State
     list_people(indexed: true)
     person = gets.chomp
 
-    print 'Date(yyyy/mm/dd):'
+    print 'Date:'
     date = gets.chomp
     Rental.new(date, @books[book.to_i], @people[person.to_i])
 
@@ -107,14 +109,12 @@ class State
   end
 
   # Method to handle user choice
-  def opt(choice)
+  def handle_choice(choice)
     case choice
     when 'List all books'
       list_books
-      main_menu
     when 'List all people'
       list_people
-      main_menu
     when 'Create a person'
       create_person
       main_menu
@@ -122,7 +122,7 @@ class State
       create_book
       main_menu
     when 'Create a rental'
-      create_rental
+      puts create_rental
       main_menu
     when 'List all rentals for a person id'
       rental_list
@@ -138,7 +138,7 @@ class State
     choices.each { |key, value| puts "#{key}:#{value}" }
     print 'Please enter a number:'
     choice = gets.chomp
-    opt(choices[choice.to_i])
+    handle_choice(choices[choice.to_i])
     puts choices[choice.to_i]
   end
 
